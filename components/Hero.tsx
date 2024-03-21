@@ -42,7 +42,7 @@ export default function Hero() {
           </motion.span>
         </div>
       </div>
-      <motion.p
+      <motion.h1
         className="mt-4 mb-10 px-4 text-2xl font-medium
        !leading-[1.5] sm:text-4xl"
         initial={{ opacity: 0, y: 200 }}
@@ -53,7 +53,7 @@ export default function Hero() {
         <span className="font-bold">2 years</span> of experience. I enjoy
         building <span className="italic">sites & apps</span>. My focus is{" "}
         <span className="underline">React (Next.js)</span>.
-      </motion.p>
+      </motion.h1>
       <motion.div
         className="flex flex-col sm:flex-row items-center justify-center 
       gap-2 px-4 text-lg font-medium"
@@ -95,7 +95,7 @@ export default function Hero() {
           href="https://github.com/Serhiipl"
           target="_blank"
           className="bg-white p-4 text-gray-700 hover:text-gray-950
-        py-3 flex items-center gap-2 rounded-full text-[1.15rem] border 
+        py-3 flex items-center gap-3 rounded-full text-[1.15rem] border 
         border-black/10 outline-none hover:scale-[1.15]
          focus:scale-[1.15] active:scale-105 transition"
         >
