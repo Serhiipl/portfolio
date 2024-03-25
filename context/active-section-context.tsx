@@ -1,15 +1,15 @@
 "use client";
-import React, { createContext, useState } from "react";
-import { links } from "@/lib/data";
-
-type SectionNane = (typeof links)[number]["name"];
+import type { SectionName } from "@/lib/types";
+import React, { createContext, useContext, useState } from "react";
 
 type ActiveSectionContextProviderProps = {
   children: React.ReactNode;
 };
 type ActiveSectionContextType = {
-  activeSection: SectionNane;
-  setActiveSection: React.Dispatch<React.SetStateAction<SectionNane>>;
+  activeSection: SectionName;
+  setActiveSection: React.Dispatch<React.SetStateAction<SectionName>>;
+  timeOfLastClick: number;
+  setTimeOfLastClick: React.Dispatch<React.SetStateAction<number>>;
 };
 
 const ActiveSectionContext = createContext<ActiveSectionContextType | null>(
@@ -19,11 +19,29 @@ const ActiveSectionContext = createContext<ActiveSectionContextType | null>(
 export default function ActiveSectionContextProvider({
   children,
 }: ActiveSectionContextProviderProps) {
-  const [activeSection, setActiveSection] = useState<SectionNane>("Home");
-
+  const [activeSection, setActiveSection] = useState<SectionName>("Home");
+  const [timeOfLastClick, setTimeOfLastClick] = useState(0);
   return (
-    <ActiveSectionContext.Provider value={{ activeSection, setActiveSection }}>
+    <ActiveSectionContext.Provider
+      value={{
+        activeSection,
+        setActiveSection,
+        timeOfLastClick,
+        setTimeOfLastClick,
+      }}
+    >
       {children}
     </ActiveSectionContext.Provider>
   );
+}
+
+export function useActiveSectionContext() {
+  const context = useContext(ActiveSectionContext);
+
+  if (context === null) {
+    throw new Error(
+      "useActiveSectionContext must be used width an  ActiveSectionContextProvider"
+    );
+  }
+  return context;
 }
