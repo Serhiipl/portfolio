@@ -12,7 +12,7 @@ import { experiencesData } from "@/lib/data";
 export default function Experience() {
   const { ref, inView } = useInView({ triggerOnce: false });
   return (
-    <section id="experience" ref={ref}>
+    <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
       <SectionHeader>My Experience</SectionHeader>
       <VerticalTimeline lineColor="">
         {experiencesData.map((item, index) => (
@@ -26,10 +26,16 @@ export default function Experience() {
                 textAlign: "left",
                 padding: "1rem 3 rem",
               }}
+              contentArrowStyle={{
+                borderRight: "7px solid #9ca3af",
+              }}
+              date={item.date}
+              icon={item.icon}
+              iconStyle={{ background: "white", fontSize: "1.5rem" }}
             >
               <h3 className="font-semibold capitalize">{item.title}</h3>
               <p className="font-normal !mt-0">{item.location}</p>
-              <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
+              <p className="!mt-1 !font-normal text-gray-700">
                 {item.description}
               </p>
             </VerticalTimelineElement>
