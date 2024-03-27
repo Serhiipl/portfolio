@@ -8,9 +8,11 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import SectionHeader from "./SectionHeader";
 import { experiencesData } from "@/lib/data";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function Experience() {
   const { ref, inView } = useInView({ triggerOnce: false });
+  const { ref: sectionRef } = useSectionInView("Experience", 0.8);
   return (
     <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
       <SectionHeader>My Experience</SectionHeader>
@@ -33,7 +35,9 @@ export default function Experience() {
               icon={item.icon}
               iconStyle={{ background: "white", fontSize: "1.5rem" }}
             >
-              <h3 className="font-semibold capitalize">{item.title}</h3>
+              <h3 ref={sectionRef} className="font-semibold capitalize">
+                {item.title}
+              </h3>
               <p className="font-normal !mt-0">{item.location}</p>
               <p className="!mt-1 !font-normal text-gray-700">
                 {item.description}
