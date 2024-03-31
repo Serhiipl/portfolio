@@ -1,6 +1,6 @@
 "use server";
 
-import { validateString } from "@/lib/utils";
+import { getErrorMessage, validateString } from "@/lib/utils";
 import { error } from "console";
 import { Resend } from "resend";
 
@@ -21,12 +21,17 @@ export const sendEmail = async (formData: FormData) => {
       error: "Invalid message",
     };
   }
-
-  resend.emails.send({
-    from: "onboarding@resend.dev",
-    to: "s.sukhovetskyi@gmail.com",
-    subject: "Wiadomosć z Portfolio",
-    reply_to: senderEmail as string,
-    text: message as string,
-  });
+  try {
+    await resend.emails.send({
+      from: "onboarding@resend.dev",
+      to: "s.sukhovetskyi@gmail.com",
+      subject: "Wiadomosć z Portfolio",
+      reply_to: senderEmail as string,
+      text: message as string,
+    });
+  } catch (error: unknown) {
+    return {
+      error: getErrorMessage(error),
+    };
+  }
 };
