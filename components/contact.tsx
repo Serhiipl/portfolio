@@ -1,10 +1,11 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import SectionHeader from "./SectionHeader";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./SubmitBtn";
+import toast from "react-hot-toast";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact", 0.2);
@@ -39,10 +40,10 @@ export default function Contact() {
         action={async (formData) => {
           const { data, error } = await sendEmail(formData);
           if (error) {
-            alert(error);
+            toast.error(error);
             return;
           }
-          alert("Email wysłano");
+          toast.success("Email wysłano");
         }}
         className="mt-10 flex flex-col invalid:border-red-500 invalid:text-red-500"
       >
