@@ -96,4 +96,6 @@ export const skillsData = [
   "Tailwind",
   "Express",
   "Framer Motion",
+  "Resend",
+  "PHP.Mailer",
 ] as const;
