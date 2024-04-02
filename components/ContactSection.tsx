@@ -22,6 +22,33 @@ export default function ContactSection() {
       }}
     >
       <SectionHeader>Contact</SectionHeader>
+      <p className="text-gray-700">
+        Please contact me directly at{" "}
+        <a
+          className="font-semibold text-gray-900"
+          href="mailto:s.sukhovetskyi@gmail.com"
+        >
+          s.sukhovetskyi@gmail.com
+        </a>{" "}
+        or through this form.
+      </p>
+      <form action="" className="mt-10 flex flex-col">
+        <input
+          className="h-14 rounded-lg borderBlack px-3"
+          name="senderEmail"
+          type="email"
+          required
+          maxLength={150}
+          placeholder="You email"
+        />
+        <textarea
+          className="borderBlack h-52 rounded-lg my-3 p-2 focus:border-black-600"
+          placeholder="You message..."
+          name="message"
+          required
+          maxLength={1500}
+        />
+      </form>
     </motion.section>
   );
 }
