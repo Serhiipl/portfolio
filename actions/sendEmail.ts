@@ -1,4 +1,4 @@
-"use client";
+"use server";
 
 import { getErrorMessage, validateString } from "@/lib/utils";
 import ContactFormEmail from "@/email/contactFormEmail";
