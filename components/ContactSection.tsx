@@ -25,10 +25,10 @@ export default function ContactSection() {
       }}
     >
       <SectionHeader>Contact</SectionHeader>
-      <p className="text-gray-700">
+      <p className="text-gray-700 dark:text-white/60">
         Please contact me directly at{" "}
         <a
-          className="font-semibold text-gray-900"
+          className="font-semibold text-gray-900 dark:text-white/90"
           href="mailto:s.sukhovetskyi@gmail.com"
         >
           s.sukhovetskyi@gmail.com
@@ -37,7 +37,7 @@ export default function ContactSection() {
       </p>
       <form
         action={async (formData) => {
-          const { data, error } = await sendEmail(formData);
+          const { error } = await sendEmail(formData);
           if (error) {
             toast.error(error);
             return;
@@ -47,7 +47,8 @@ export default function ContactSection() {
         className="mt-10 flex flex-col"
       >
         <input
-          className="h-14 rounded-lg borderBlack px-3"
+          className="h-14 rounded-lg borderBlack px-3 dark:bg-white dark:bg-opacity-70
+           dark:text-black dark:focus:bg-opacity-90 transition-all outline-black/30 dark:outline-none"
           name="senderEmail"
           type="email"
           required
@@ -55,7 +56,8 @@ export default function ContactSection() {
           placeholder="You email"
         />
         <textarea
-          className="borderBlack h-52 rounded-lg my-3 p-2 focus:border-black-600"
+          className="borderBlack h-52 rounded-lg my-3 p-2 focus:border-black-600 dark:bg-white dark:bg-opacity-70
+           dark:text-black dark:focus:bg-opacity-90 transition-all  outline-black/30 dark:outline-none"
           placeholder="You message..."
           name="message"
           required
