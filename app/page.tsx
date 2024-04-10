@@ -9,7 +9,7 @@ import Skills from "@/components/Skills";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center px-4">
+    <main className="flex flex-col items-center ml-20 sm:ml-0 px-4">
       <Hero />
       <Divider />
       <About />

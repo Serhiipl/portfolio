@@ -87,19 +87,19 @@ export default function Hero() {
         <a
           className="gorup bg-white px-7 border border-black/10
         py-3 flex items-center gap-2 rounded-full outline-none hover:scale-110
-         focus:scale-110 active:scale-105 transition"
+         focus:scale-110 active:scale-105 transition dark:bg-white/10"
           href="/Sukhovetskyi_Serhii_CV.pdf"
           download={true}
         >
           Download CV
-          <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
+          <HiDownload className="opacity-60 group-hover:translate-y-1 transition " />
         </a>
         <a
           href="https://www.linkedin.com/in/serhii-sukhovetskyi-68b67721a/"
           target="_blank"
           className="bg-white p-4 text-gray-700 hover:text-gray-950
-        py-3 flex items-center gap-2 rounded-full border border-black/10
-        outline-none hover:scale-110 focus:scale-110 active:scale-105 transition"
+        py-3 flex items-center gap-2 rounded-full border border-black/10 dark:bg-white/10
+        dark:text-white/60 outline-none hover:scale-110 focus:scale-110 active:scale-105 transition"
         >
           <BsLinkedin />
         </a>
@@ -108,8 +108,8 @@ export default function Hero() {
           target="_blank"
           className="bg-white p-4 text-gray-700 hover:text-gray-950
         py-3 flex items-center gap-3 rounded-full text-[1.15rem] border 
-        border-black/10 outline-none hover:scale-[1.15]
-         focus:scale-[1.15] active:scale-105 transition"
+        border-black/10 outline-none hover:scale-[1.15] dark:bg-white/10
+         focus:scale-[1.15] active:scale-105 transition dark:text-white/60"
         >
           <FaGithubSquare />
         </a>
