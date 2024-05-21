@@ -3,7 +3,7 @@ import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import looksImg from "@/public/looks.webp";
-import rmtdevImg from "@/public/rmtdev.png";
+import weatherApp from "@/public/weatherApp.webp";
 import wordanalyticsImg from "@/public/wordanalytics.png";
 
 export const links = [
@@ -69,11 +69,19 @@ export const projectsData = [
     imageUrl: looksImg,
   },
   {
-    title: "rmtDev",
+    title: "Weather App",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    imageUrl: rmtdevImg,
+      "This weather app https://sergiosweather.vercel.app, built with React and Next.js, fetches five-day forecasts using OpenWeatherMap's API. Users input a city name to view current weather conditions.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Tailwind",
+      "date-fns",
+      "ReactQuery",
+      "Jotai",
+    ],
+    imageUrl: weatherApp,
   },
   {
     title: "Word Analytics",
