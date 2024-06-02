@@ -63,15 +63,16 @@ export const experiencesData = [
 export const projectsData = [
   {
     title: "theLooKS.pl",
+    link: "https://thelooks.pl",
     description:
       "I worked as a full-stack developer on this startup project. This is a Landing page for Beauty Studio.",
     tags: ["HTML", "SCSS", "Vanilla JS", "PHP.Mailer", "PhotoSwipe", "Swiper"],
     imageUrl: looksImg,
   },
   {
-    title: "Weather App",
-    description:
-      "This weather app https://sergiosweather.vercel.app, built with React and Next.js, fetches five-day forecasts using OpenWeatherMap's API. Users input a city name to view current weather conditions.",
+    title: "sergiosweather.vercel.app",
+    link: "https://sergiosweather.vercel.app",
+    description: `This weather app https://sergiosweather.vercel.app, built with React and Next.js, fetches five-day forecasts using OpenWeatherMap's API. Users input a city name to view current weather conditions.`,
     tags: [
       "React",
       "TypeScript",

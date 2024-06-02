@@ -88,7 +88,7 @@ export default function Hero() {
           className="gorup bg-white px-7 border border-black/10
         py-3 flex items-center gap-2 rounded-full outline-none hover:scale-110
          focus:scale-110 active:scale-105 transition dark:bg-white/10"
-          href="/Sukhovetskyi_Serhii_CV.pdf"
+          href="/Serhii_Sukhovetskyi_CV.pdf"
           download={true}
         >
           Download CV
